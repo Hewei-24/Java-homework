@@ -11,7 +11,6 @@ public class Exercise8 extends JFrame implements ActionListener {
     public Exercise8() {
         setLayout(new BorderLayout());
 
-        // 基本信息面板
         JPanel infoPanel = new JPanel(new GridLayout(3, 2, 5, 5));
         infoPanel.add(new JLabel("姓名:"));
         nameField = new JTextField();
@@ -30,7 +29,6 @@ public class Exercise8 extends JFrame implements ActionListener {
         deptCombo = new JComboBox<>(new String[]{"计算机系", "数学系", "物理系"});
         infoPanel.add(deptCombo);
 
-        // 食物选择面板
         JPanel foodPanel = new JPanel(new GridLayout(3, 1, 5, 5));
         String[][] foods = {
                 {"米饭", "面条", "粉丝", "水饺", "抄手"},
@@ -51,7 +49,6 @@ public class Exercise8 extends JFrame implements ActionListener {
             foodPanel.add(categoryPanel);
         }
 
-        // 按钮面板
         JPanel buttonPanel = new JPanel();
         JButton confirmBtn = new JButton("确定");
         confirmBtn.addActionListener(this);
@@ -74,7 +71,6 @@ public class Exercise8 extends JFrame implements ActionListener {
         setVisible(true);
     }
 
-    @Override
     public void actionPerformed(ActionEvent e) {
         StringBuilder sb = new StringBuilder();
         sb.append(nameField.getText()).append(" ");

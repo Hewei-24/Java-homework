@@ -14,7 +14,7 @@ public class Exercise6 {
                     System.out.println("座位" + seatNum + "被选中"));
             frame.add(seat);
         }
-
+        
         frame.setSize(500, 150);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setVisible(true);

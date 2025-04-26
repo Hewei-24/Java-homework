@@ -60,7 +60,6 @@ class CalculatorFrame3 extends JFrame {
         });
         add(calcBtn);
 
-        // 设置窗口属性
         setSize(350, 200);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);

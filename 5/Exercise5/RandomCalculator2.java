@@ -14,7 +14,7 @@ class CalculatorFrame2 extends JFrame implements ActionListener {
     private JButton genBtn, calcBtn;
 
     public CalculatorFrame2() {
-        // 初始化界面
+
         setTitle("随机数计算器（窗口类实现接口）");
         setLayout(new GridLayout(4, 2, 10, 10));
 

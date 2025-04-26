@@ -8,7 +8,7 @@ public class Exercise7 {
         frame.setLayout(new BorderLayout());
 
         JPanel leftPanel = new JPanel();
-        leftPanel.setBorder(BorderFactory.createTitledBorder("请选择认证方式"));
+        leftPanel.setBorder(BorderFactory.createTitledBorder("选择认证方式"));
         ButtonGroup group = new ButtonGroup();
         String[] authTypes = {"护照", "身份证", "社会保障卡", "驾驶证"};
 

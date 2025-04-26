@@ -6,7 +6,6 @@ public class Exercise1 {
         JFrame frame = new JFrame("个人信息");
         frame.setLayout(new BorderLayout());
 
-        // 使用Box创建垂直布局
         Box centerBox = Box.createVerticalBox();
         String[] labels = {"姓名:", "职业:", "邮箱:"};
         for (String label : labels) {
@@ -16,7 +15,6 @@ public class Exercise1 {
             centerBox.add(row);
         }
 
-        // 按钮面板
         JPanel buttonPanel = new JPanel();
         buttonPanel.add(new JButton("OK"));
         buttonPanel.add(new JButton("Cancel"));

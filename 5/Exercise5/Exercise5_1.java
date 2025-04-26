@@ -36,7 +36,7 @@ class RandomCalculator extends JFrame {
         calcBtn.addActionListener(new CalculateListener());
         add(calcBtn);
 
-        setTitle("随机数计算器");
+        setTitle("随机数字计算器");
         setSize(300, 200);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setVisible(true);

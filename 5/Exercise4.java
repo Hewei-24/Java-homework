@@ -8,7 +8,7 @@ public class Exercise4 {
         frame.setLayout(new FlowLayout());
 
         JTextField input = new JTextField(5);
-        JLabel output = new JLabel("等待输入...");
+        JLabel output = new JLabel("等待输入");
 
         input.addActionListener(e -> {
             String[] words = {"zero", "one", "two", "three", "four",
