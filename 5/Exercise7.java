@@ -2,7 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class Exercise7_20241576_5_7 {
+public class Exercise7{
     public static void main(String[] args) {
         JFrame frame = new JFrame("认证方式选择");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
