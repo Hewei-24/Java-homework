@@ -1,4 +1,4 @@
-package example1;
+package loginframe;
 
 import java.awt.*;
 import javax.swing.*;
@@ -133,7 +133,7 @@ public class MainFrame extends JFrame implements ActionListener{
                 }
                 break;
             case "Save":
-                System.out.println("信息已保存");
+                System.out.println("用户信息已保存");
                 break;
             case "New":
                 clearFields();

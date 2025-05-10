@@ -1,4 +1,4 @@
-package example1;
+package loginframe;
 
 import java.awt.*;
 import javax.swing.*;
