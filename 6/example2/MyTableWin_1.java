@@ -1,0 +1,74 @@
+package example2;
+
+import java.awt.*;
+import javax.swing.*;
+import java.awt.event.*;
+import javax.swing.table.DefaultTableModel;
+
+public class MyTableWin_1 extends JFrame implements ActionListener {
+    Object rows[][] = {{"001","zhangsan","03/04/2002","Computer"},{"002","lisi","05/10/2002","Computer"},{"003","wangwu","09/10/2002","English"}};
+    String cols[] = {"number","name","birthday","department"};
+    JTable table;
+    JLabel lbl_show;
+    JTextField txt_show;
+    JButton btn_update;
+    JPanel pSouth,pNorth;
+
+    JScrollPane jp;
+
+    public MyTableWin_1(){
+
+        table = new JTable(rows,cols);
+        table.addMouseListener(new MouseAdapter() {
+            public void mouseClicked(MouseEvent e) {
+                int row = table.getSelectedRow();
+                if (row >= 0) {
+                    StringBuilder rowData = new StringBuilder();
+                    for (int col = 0; col < table.getColumnCount(); col++) {
+                        rowData.append(table.getValueAt(row, col)).append(" ");
+                    }
+                    System.out.println("Row " + row + ": " + rowData.toString());
+                }
+            }
+        });
+
+        lbl_show = new JLabel("Info.");
+        txt_show = new JTextField(15);
+        btn_update = new JButton("Update");
+        btn_update.setEnabled(false);
+        btn_update.addActionListener(this);
+        pSouth = new JPanel();
+        pNorth = new JPanel();
+
+        jp = new JScrollPane(table);
+        pNorth.add(jp);
+
+        pSouth.add(lbl_show);
+        pSouth.add(txt_show);
+        pSouth.add(btn_update);
+
+        add(pNorth,BorderLayout.CENTER);
+        add(pSouth,BorderLayout.SOUTH);
+
+        setSize(500,150);
+        setTitle("Table Example");
+        setLocationRelativeTo(null);
+        setVisible(true);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    }
+    public void actionPerformed(ActionEvent e){
+        int row = table.getSelectedRow();
+        int column = table.getSelectedColumn();
+        rows[row][column] = txt_show.getText();
+        int option = JOptionPane.showConfirmDialog(this,"do you confirm toupdate the table content?","warning",JOptionPane.OK_CANCEL_OPTION);
+        if(option == JOptionPane.OK_OPTION){
+            table.setModel(new DefaultTableModel(rows,cols));
+        }
+        btn_update.setEnabled(false);
+    }
+
+    public static void main(String[] args){
+
+        MyTableWin_1 win = new MyTableWin_1();
+    }
+}
