@@ -1,0 +1,33 @@
+package example;
+
+import java.sql.*;
+import javax.swing.JOptionPane;
+class DemoInsert {
+    public static void main(String[] args){
+        String url = "jdbc:mysql://127.0.0.1:3306/student";
+        String user= "root",pwd = "Hw044529.";
+        Connection con;
+        Statement sql;
+        ResultSet rs;
+
+        try{
+            Class.forName ("com.mysql.cj.jdbc.Driver");
+
+        }catch(ClassNotFoundException e){
+            System.out.println("test"+e);
+        }
+        try{
+            con=DriverManager.getConnection(url,user,pwd);
+            sql = con.createStatement();
+            String mysql = "INSERT INTO message VALUES('001','wangxiao','1985-2-3',1.98)";
+            System.out.println(mysql);
+            int k = sql.executeUpdate(mysql);
+            if(k==1)
+                JOptionPane.showMessageDialog(null,"插入记录成功","成功",JOptionPane.PLAIN_MESSAGE);
+            con.close();
+        }catch(SQLException ee){
+            JOptionPane.showMessageDialog(null,"插入记录失败"+ee,"失败",JOptionPane.ERROR_MESSAGE);
+
+        }
+    }
+}
